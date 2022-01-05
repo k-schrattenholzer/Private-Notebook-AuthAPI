@@ -21,11 +21,11 @@ export default function Auth({ isSigningUp = false }) {
       
       if (isSigningUp) {
         const user = await signUpUser(email, password);
-        setUser();
+        setUser(user);
         history.replace('/confirm-email');
       } else {
         const user = await signInUser(email, password);
-        setUser();
+        setUser(user);
         history.replace('/notes')}
       
 
